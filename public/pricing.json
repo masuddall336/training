@@ -1,0 +1,44 @@
+ [
+    {
+      "id": 1,
+      "name": "Basic Plan",
+      "img": "../public/img/product_1.jpg",
+      "description": "Best for small businesses and startups",
+      "price": 25,
+      "currency": "USD",
+      "features": [
+        "Up to 5 products",
+        "Email support",
+        "Basic analytics"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Standard Plan",
+      "img": "../public/img/product_2.jpg",
+      "description": "Ideal for growing companies",
+      "price": 50,
+      "currency": "USD",
+      "features": [
+        "Up to 20 products",
+        "Priority email support",
+        "Advanced analytics",
+        "Custom branding"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Premium Plan",
+      "img": "../public/img/product_3.jpg",
+      "description": "Perfect for large factories and enterprises",
+      "price": 99,
+      "currency": "USD",
+      "features": [
+        "Unlimited products",
+        "24/7 support",
+        "Full analytics",
+        "Dedicated account manager",
+        "API access"
+      ]
+    }
+  ]
