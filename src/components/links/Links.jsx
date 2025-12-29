@@ -1,8 +1,11 @@
-export default function Links({ name }) {
+import { Link } from "react-router";
+
+export default function Links({ name, path }) {
     return (
         <div>
             <ul>
-                <li className="cursor-pointer">{name}</li>
+                <Link to={path}><li className="cursor-pointer">{name}</li></Link>
+
             </ul>
         </div>
     )

@@ -1,10 +1,30 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+import './index.css'
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Root from './Root.jsx';
+import { Component } from 'lucide-react';
+import App from './App.jsx';
+import Pricing from './components/pricing/Pricing.jsx';
+let root = document.getElementById('root')
+
+let router = createBrowserRouter([
+  {
+    path: '',
+    Component: Root,
+    children: [
+      {
+        index: true,
+        Component: App
+      },
+      {
+        path: 'cards',
+        Component: Pricing
+      }
+    ]
+  }
+])
+
+ReactDOM.createRoot(root).render(
+  <RouterProvider router={router}></RouterProvider>
 )

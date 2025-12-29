@@ -8,9 +8,12 @@ function App() {
   return (
     <>
       <div className=' text-center'>
-        <h2>Practic file</h2>
-        <Header></Header>
-        <Pricing></Pricing>
+        <h2>home compo</h2>
+        <h2>home compo</h2>
+        <h2>home compo</h2>
+        <h2>home compo</h2>
+        <h2>home compo</h2>
+        <h2>home compo</h2>
       </div>
     </>
   )
