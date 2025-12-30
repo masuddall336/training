@@ -5,8 +5,10 @@ import { useState } from "react"
 let links = [
     { name: "Home", path: "/", id: 1 },
     { name: "Cards", path: "/cards", id: 2 },
-    { name: "Contact Us", path: "/contact", id: 3 },
-    { name: "About Us", path: "/about", id: 4 }
+    { name: "users", path: "/users", id: 3 },
+    { name: "users2", path: "/user2", id: 3 },
+    { name: "users3", path: "/users3", id: 3 },
+    { name: "About Us", path: "/about", id: 4 },
 ]
 export default function Header() {
     const [icon, setIcon] = useState(true);

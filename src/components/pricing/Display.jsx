@@ -6,7 +6,7 @@ export default function Display({ datas }) {
     return (
         <div className="flex justify-between mx-2">
             {
-                takeAlldatas.map(data=> <Show data={data}></Show>)
+                takeAlldatas.map((data, index)=> <Show key={index} data={data}></Show>)
             }
         </div>
     )

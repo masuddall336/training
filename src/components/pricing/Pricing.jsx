@@ -1,15 +1,14 @@
-import { Suspense } from "react"
 import Display from "./Display"
+import { data } from "react-router"
 
 let datas = fetch('pricing.json')
     .then(res => res.json())
+
 export default function Pricing() {
 
     return (
         <div>
-            <Suspense fallback={<span className="loading loading-spinner text-success"></span>}>
-                <Display datas={datas}></Display>
-            </Suspense>
+            <Display key={data.id} datas={datas}></Display>
         </div>
     )
 }
