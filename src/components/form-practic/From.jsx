@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useCustomHook from './customHook';
 
 const From = () => {
   let fromHandle = (e) => {
@@ -28,15 +29,28 @@ const From = () => {
     e.preventDefault();
     console.log("Click");
     console.log(e.target.password.value);
-    
-
   }
   let [pass, setPass] = useState('');
   let setPassInState = (e) => {
     setPass(e.target.value);
     console.log(e.target.value);
-    
+
   }
+
+
+
+
+
+  // Custom hook
+  let cutophookStopPrevent = (e) => {
+    e.preventDefault();
+    console.log("Submited Custom Hook Form");
+    console.log(e.target.name.value);
+    console.log(e.target.password.value);
+
+  }
+  let [value, setValue] = useCustomHook('123')
+  let [passwo, setpasswo] = useCustomHook('123456')
 
   return (
     <>
@@ -45,7 +59,7 @@ const From = () => {
         <form onSubmit={fromHandle} className="flex flex-col gap-2" >
           <input className='bg-amber-700 outline-none p-1 rounded text-amber-50' type="text" name="name" id="name" placeholder='Name' />
           <input className='bg-amber-700 outline-none p-1 rounded text-amber-50' type="email" name="email" id="email" placeholder='Email' />
-          <input className='bg-amber-700 outline-none p-1 rounded text-amber-50'  type="password" name="password" onChange={onChane} defaultValue={password} id="password" placeholder='Password' />
+          <input className='bg-amber-700 outline-none p-1 rounded text-amber-50' type="password" name="password" onChange={onChane} defaultValue={password} id="password" placeholder='Password' />
           <input className='bg-amber-700 text-amber-50 font-bold py-1 rounded cursor-pointer' type="submit" name="" id="" value='Submit' />
         </form>
         <p>{error}</p>
@@ -62,6 +76,19 @@ const From = () => {
         </form>
         <p>{error}</p>
       </div>
+
+
+      <div className='w-4/12 mx-auto border-1 border-amber-700 rounded p-5 mt-5 mb-5'>
+        <h2 className='text-center pb-3 text-xl font-bold'>Email Form</h2>
+        <form onSubmit={cutophookStopPrevent} className="flex flex-col gap-2" >
+          <input className='bg-amber-700 outline-none p-1 rounded text-amber-50' type="text" name="name" id="name" placeholder='Name' onChange={setValue} defaultValue={value} />
+          <input className='bg-amber-700 outline-none p-1 rounded text-amber-50' type="email" name="email" id="email" placeholder='Email' />
+          <input className='bg-amber-700 outline-none p-1 rounded text-amber-50' type="password" name="password" id="password" placeholder='Password' onChange={setpasswo} defaultValue={passwo} />
+          <input className='bg-amber-700 text-amber-50 font-bold py-1 rounded cursor-pointer' type="submit" name="" id="" value='Submit' />
+        </form>
+        <p>{error}</p>
+      </div>
+
     </>
   );
 };
