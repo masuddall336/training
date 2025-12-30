@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ProductForm = () => {
+const ProductForm = ({ pullProducts }) => {
     let handleOnSubmit = (e) => {
         e.preventDefault();
         let name = e.target.customerName.value;
@@ -12,15 +12,13 @@ const ProductForm = () => {
             address
         }
         console.log(newProducts);
+        pullProducts(newProducts);
 
 
     }
     let [name, setName] = useState('');
     let [produt, setProduct] = useState('');
     let [address, setAddress] = useState('');
-    console.log(name);
-    console.log(produt);
-    console.log(address);
 
     let changeinstand = (e) => {
         setName(e.target.value);
