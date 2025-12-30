@@ -1,13 +1,13 @@
 
 import './App.css'
 import From from './components/form-practic/From'
-import Header from './components/header/Header'
-import Pricing from './components/pricing/Pricing'
+import ProductForm from './components/products/ProductForm'
 
 function App() {
 
   return (
     <>
+    <ProductForm></ProductForm>
     <From></From>
       <div className=' text-center'>
 
